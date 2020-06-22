@@ -17,9 +17,13 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* feelingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* feelingTests.m */; };
 		54A0D45452A43A038D8A6D18 /* libPods-feeling-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E45051DF4A8833679FB2D1 /* libPods-feeling-tvOS.a */; };
+		7460E712875C4757A0AA277C /* Palanquin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C62C2DC9866407EBAC957B6 /* Palanquin-Bold.ttf */; };
+		7C588C12B9054329A842ECDB /* Palanquin-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8267381DA2F7448F92E889BA /* Palanquin-Light.ttf */; };
+		994F6BFBB0D14874A6FB4162 /* Palanquin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6FCE6E340714BF0915A3ED0 /* Palanquin-Medium.ttf */; };
 		DD59EE89AF7056ECCAE9405C /* libPods-feeling-feelingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCFF9C30F4886B2F622929 /* libPods-feeling-feelingTests.a */; };
 		E23D19EE1F31935ED3F7E5B4 /* libPods-feeling.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA5DDE4D3D0E7CB271EFC7C /* libPods-feeling.a */; };
 		EBED6BE1AA9D83E8906AD9A6 /* libPods-feeling-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F499A04902A6D65DCAFE5E1 /* libPods-feeling-tvOSTests.a */; };
+		F03AB70A3B2746E38BDF6965 /* Palanquin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 049DB78AA1F8472EA067B768 /* Palanquin-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,7 @@
 		00E356EE1AD99517003FC87E /* feelingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = feelingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* feelingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = feelingTests.m; sourceTree = "<group>"; };
+		049DB78AA1F8472EA067B768 /* Palanquin-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Palanquin-Regular.ttf"; path = "../assets/fonts/Palanquin-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Feeling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feeling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = feeling/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = feeling/AppDelegate.m; sourceTree = "<group>"; };
@@ -56,10 +61,16 @@
 		2D02E4901E0B4A5D006451C7 /* feeling-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "feeling-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2FB7D9C5B572D4EF19657C /* Pods-feeling-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-tvOS.release.xcconfig"; path = "Target Support Files/Pods-feeling-tvOS/Pods-feeling-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		40D49CEB219E44E76A7BFE21 /* Pods-feeling-feelingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-feelingTests.debug.xcconfig"; path = "Target Support Files/Pods-feeling-feelingTests/Pods-feeling-feelingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		506949C8EC0A4C499FBCC54B /* PalanquinDark-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PalanquinDark-Medium.ttf"; path = "../assets/fonts/PalanquinDark-Medium.ttf"; sourceTree = "<group>"; };
+		58692E1197304C92921A8D71 /* PalanquinDark-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PalanquinDark-Bold.ttf"; path = "../assets/fonts/PalanquinDark-Bold.ttf"; sourceTree = "<group>"; };
 		726C70AE4696DA2E1B9863B4 /* Pods-feeling-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-feeling-tvOS/Pods-feeling-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7C62C2DC9866407EBAC957B6 /* Palanquin-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Palanquin-Bold.ttf"; path = "../assets/fonts/Palanquin-Bold.ttf"; sourceTree = "<group>"; };
+		8267381DA2F7448F92E889BA /* Palanquin-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Palanquin-Light.ttf"; path = "../assets/fonts/Palanquin-Light.ttf"; sourceTree = "<group>"; };
+		8988AAE431F844D88D73B536 /* PalanquinDark-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PalanquinDark-Regular.ttf"; path = "../assets/fonts/PalanquinDark-Regular.ttf"; sourceTree = "<group>"; };
 		9F499A04902A6D65DCAFE5E1 /* libPods-feeling-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-feeling-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2F7C3B2F9030E01594B717 /* Pods-feeling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling.release.xcconfig"; path = "Target Support Files/Pods-feeling/Pods-feeling.release.xcconfig"; sourceTree = "<group>"; };
 		B153773F4A1E39E0E1FFB91E /* Pods-feeling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling.debug.xcconfig"; path = "Target Support Files/Pods-feeling/Pods-feeling.debug.xcconfig"; sourceTree = "<group>"; };
+		B6FCE6E340714BF0915A3ED0 /* Palanquin-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Palanquin-Medium.ttf"; path = "../assets/fonts/Palanquin-Medium.ttf"; sourceTree = "<group>"; };
 		C4A75B3C858EED6C0526F52E /* Pods-feeling-feelingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-feelingTests.release.xcconfig"; path = "Target Support Files/Pods-feeling-feelingTests/Pods-feeling-feelingTests.release.xcconfig"; sourceTree = "<group>"; };
 		D9EF8497067DDC4F8949B563 /* Pods-feeling-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-feeling-tvOSTests/Pods-feeling-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		E19D0ACA2BC20F89819168B3 /* Pods-feeling-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-feeling-tvOSTests/Pods-feeling-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +176,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BFB4E6FB8FC44339CDE7358C /* Pods */,
+				BE2BDCF4DDDD40BAA6EFEA68 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -180,6 +192,20 @@
 				2D02E4901E0B4A5D006451C7 /* feeling-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BE2BDCF4DDDD40BAA6EFEA68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58692E1197304C92921A8D71 /* PalanquinDark-Bold.ttf */,
+				506949C8EC0A4C499FBCC54B /* PalanquinDark-Medium.ttf */,
+				8988AAE431F844D88D73B536 /* PalanquinDark-Regular.ttf */,
+				7C62C2DC9866407EBAC957B6 /* Palanquin-Bold.ttf */,
+				8267381DA2F7448F92E889BA /* Palanquin-Light.ttf */,
+				B6FCE6E340714BF0915A3ED0 /* Palanquin-Medium.ttf */,
+				049DB78AA1F8472EA067B768 /* Palanquin-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BFB4E6FB8FC44339CDE7358C /* Pods */ = {
@@ -341,6 +367,10 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				7460E712875C4757A0AA277C /* Palanquin-Bold.ttf in Resources */,
+				7C588C12B9054329A842ECDB /* Palanquin-Light.ttf in Resources */,
+				994F6BFBB0D14874A6FB4162 /* Palanquin-Medium.ttf in Resources */,
+				F03AB70A3B2746E38BDF6965 /* Palanquin-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
