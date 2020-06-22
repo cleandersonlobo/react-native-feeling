@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, View, StatusBar } from 'react-native';
+import { Slider } from 'components';
 import styles, { Text } from './styles';
 
 const App: React.FC = () => {
@@ -25,8 +26,11 @@ const App: React.FC = () => {
             <Text>Slightly Okay</Text>
             <Text>Choose the intensity of your feeling</Text>
           </View>
-          <View style={{ flex: 1, backgroundColor: '#7653E2' }}>
-            <Text>Slightly Okay</Text>
+          <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <Slider />
+            <View style={{ flex: 1, backgroundColor: '#7653E2' }}>
+              <Text>Slightly Okay</Text>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
