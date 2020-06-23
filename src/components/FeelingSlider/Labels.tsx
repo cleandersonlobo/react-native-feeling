@@ -1,22 +1,17 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Animated from 'react-native-reanimated';
-import { colors } from 'styles';
 import { LabelsContext, LabelContext } from 'contexts';
 import Label from './Label';
 
-const { add, round, divide } = Animated;
-
 const Labels: React.FC = () => {
   const {
-    x,
+    runAnimation,
     size,
     options,
     field,
-    optionsColor = [colors.PRIMARY_COLOR, 'gray'],
+    optionsColor,
     align = 'top',
   } = React.useContext(LabelsContext);
-  const index = add(round(divide(x, size)), 1);
 
   return (
     <View
@@ -35,10 +30,9 @@ const Labels: React.FC = () => {
               field,
               optionsColor,
               align,
-              index,
               i,
               option,
-              x,
+              runAnimation,
               size,
             }}
           >

@@ -23,7 +23,7 @@ const platformZeroPoint: number | undefined = Platform.select({
 });
 
 interface CursorProps {
-  x: Animated.Value<number>;
+  runAnimation: Animated.Value<number>;
   size: number;
   count: number;
   options: LabelOptions[];
@@ -32,7 +32,7 @@ interface CursorProps {
 }
 
 const Cursor: React.FC<CursorProps> = ({
-  x,
+  runAnimation,
   count,
   size,
   options,
@@ -58,7 +58,7 @@ const Cursor: React.FC<CursorProps> = ({
             width: fullWidth / options.length,
             transform: [
               {
-                translateX: x,
+                translateX: runAnimation,
               },
             ],
           },
@@ -85,10 +85,11 @@ const Cursor: React.FC<CursorProps> = ({
       </Animated.View>
     );
   };
+
   return (
     <>
       {renderAnimatedBackground()}
-      <PanGestureHandler maxPointers={1} {...gestureHandler}>
+      <PanGestureHandler maxPointers={1} minDist={0} {...gestureHandler}>
         <Animated.View
           style={{
             ...StyleSheet.absoluteFillObject,
@@ -96,7 +97,7 @@ const Cursor: React.FC<CursorProps> = ({
             height: size - 30,
             justifyContent: 'center',
             alignItems: 'center',
-            transform: [{ translateX: x }],
+            transform: [{ translateX: runAnimation }],
           }}
         >
           <View

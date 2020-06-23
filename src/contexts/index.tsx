@@ -7,19 +7,22 @@ interface LContextProps {
   align: string;
   i: number;
   option: LabelOptions;
-  index: Animated.Adaptable<number>;
-  x: Animated.Value<number>;
+  runAnimation: Animated.Value<number>;
   size: number;
 }
 
 interface LabelProps {
-  x: Animated.Value<number>;
+  runAnimation: Animated.Value<number>;
   count: number;
   size: number;
   options: LabelOptions[];
   field: string;
   optionsColor: string[];
   align: string;
+  handleChange(
+    cursor: Animated.Adaptable<0> | number,
+    option: LabelOptions,
+  ): void;
 }
 
 export const LabelsContext = React.createContext({} as LabelProps);

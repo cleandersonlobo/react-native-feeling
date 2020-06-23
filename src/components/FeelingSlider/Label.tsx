@@ -1,32 +1,33 @@
 import * as React from 'react';
-import { mixColor, withTransition } from 'react-native-redash';
+import { mixColor } from 'react-native-redash';
 import { TouchableWithoutFeedback } from 'react-native';
-import Animated, { call, useCode } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import style from 'styles';
-import { LabelContext } from 'contexts';
+import { LabelContext, LabelsContext } from 'contexts';
 import styles from './styles';
 
-const { cond, eq } = Animated;
+const { cond, eq, call, useCode, round, divide } = Animated;
 
 const Label: React.FC = () => {
   const [active, setActive] = React.useState(false);
   const {
     field,
-    index,
     i,
     align,
     optionsColor,
     option,
-    x,
+    runAnimation,
     size,
   } = React.useContext(LabelContext);
+  const index = round(divide(runAnimation, size));
+  const { handleChange } = React.useContext(LabelsContext);
 
-  const isActive = eq(index, i + 1);
-  const progress = withTransition(isActive);
+  const isActive = eq(index, i);
+
   useCode(
     () =>
       cond(
-        progress,
+        isActive,
         call([], () => setActive(true)),
         call([], () => setActive(false)),
       ),
@@ -41,34 +42,32 @@ const Label: React.FC = () => {
     optionsColor[1],
   );
   const cursor = size * i;
-  const inputRange = [cursor - (size - 5), cursor, cursor + (size + 5)];
+  const inputRange = [cursor - size, cursor, cursor + size];
   const fontWeight = cond(isActive, 'bold', '400');
-  const opacityDescription = x.interpolate({
+  const opacityDescription = runAnimation.interpolate({
     inputRange,
-    outputRange: [0.7, 1, 0.7],
+    outputRange: [0.8, 1, 0.8],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
-  const opacity = x.interpolate({
+  const opacity = runAnimation.interpolate({
     inputRange,
     outputRange: [1, 0, 1],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
-  const translateY = x.interpolate({
+  const translateY = runAnimation.interpolate({
     inputRange,
     outputRange: [0, align === 'top' ? -24 : 40, 0],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
-  const fontSize = x.interpolate({
+  const fontSize = runAnimation.interpolate({
     inputRange,
-    outputRange: [12, align === 'top' ? 30 : 14, 14],
+    outputRange: [12, align === 'top' ? 30 : 16, 14],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
 
-  function handleOnPress(): void {
-    //    x.setValue(cursor);
-
-    x.setValue(cursor);
-  }
+  const handleOnPress = React.useCallback(() => {
+    handleChange(cursor, option);
+  }, [cursor, option, handleChange]);
 
   return (
     <TouchableWithoutFeedback onPress={handleOnPress}>
