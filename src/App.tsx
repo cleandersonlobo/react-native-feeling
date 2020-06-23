@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { FeelingSlider, FeelingStatus } from 'components';
 import styles from './styles';
+import Button from './components/Button/Button';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         >
           <FeelingStatus />
           <FeelingSlider />
+          <Button />
         </ScrollView>
       </SafeAreaView>
     </>
