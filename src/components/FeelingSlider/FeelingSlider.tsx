@@ -4,6 +4,8 @@ import Animated from 'react-native-reanimated';
 import { LABELS_DATA } from 'helpers';
 import { clamp, onGestureEvent, snapPoint, timing } from 'react-native-redash';
 import { State } from 'react-native-gesture-handler';
+import { LabelsContext } from 'contexts';
+import { colors } from 'styles';
 import Cursor from './Cursor';
 import Labels from './Labels';
 import styles, { COUNT_LABELS, HEIGHT_CURSOR } from './styles';
@@ -41,23 +43,34 @@ const FeelingSlider: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.labelTop}>
-        <Labels
-          size={HEIGHT_CURSOR}
-          options={LABELS_DATA}
-          field="level"
-          align="top"
-          {...{ x, count: COUNT_LABELS }}
-        />
+        <LabelsContext.Provider
+          value={{
+            x,
+            count: COUNT_LABELS,
+            size: HEIGHT_CURSOR,
+            options: LABELS_DATA,
+            optionsColor: [colors.PRIMARY_COLOR, 'gray'],
+            field: 'level',
+            align: 'top',
+          }}
+        >
+          <Labels />
+        </LabelsContext.Provider>
       </View>
       <View style={styles.contentCursor}>
-        <Labels
-          size={HEIGHT_CURSOR}
-          options={LABELS_DATA}
-          field="feeling"
-          align="bottom"
-          optionsColor={['white', '#eee']}
-          {...{ x, count: COUNT_LABELS }}
-        />
+        <LabelsContext.Provider
+          value={{
+            x,
+            count: COUNT_LABELS,
+            size: HEIGHT_CURSOR,
+            options: LABELS_DATA,
+            optionsColor: ['white', '#eee'],
+            field: 'feeling',
+            align: 'bottom',
+          }}
+        >
+          <Labels />
+        </LabelsContext.Provider>
         <Cursor
           size={HEIGHT_CURSOR}
           options={LABELS_DATA}

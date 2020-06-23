@@ -3,7 +3,7 @@ import { mixColor, withTransition } from 'react-native-redash';
 import { TouchableWithoutFeedback } from 'react-native';
 import Animated, { call, useCode } from 'react-native-reanimated';
 import style from 'styles';
-import { LabelContext } from './Labels';
+import { LabelContext } from 'contexts';
 import styles from './styles';
 
 const { cond, eq } = Animated;
@@ -65,6 +65,8 @@ const Label: React.FC = () => {
   });
 
   function handleOnPress(): void {
+    //    x.setValue(cursor);
+
     x.setValue(cursor);
   }
 
