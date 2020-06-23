@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
   },
   safeHeader: { flex: 0, backgroundColor: colors.WHITE },
   safeArea: { flex: 1, backgroundColor: colors.PRIMARY_COLOR },
+  headerTitleStyle: {
+    fontFamily: 'Palanquin',
+    color: colors.WHITE,
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 });
 
 export default styles;

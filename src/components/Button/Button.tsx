@@ -1,7 +1,10 @@
 import React from 'react';
 import { Touchable, TouchableText } from './styles';
 
-const Button: React.FC = props => {
+export interface Props {
+  onPress(): void;
+}
+const Button: React.FC<Props> = props => {
   return (
     <Touchable {...props}>
       <TouchableText>NEXT</TouchableText>
