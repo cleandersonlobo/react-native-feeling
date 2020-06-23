@@ -2,8 +2,9 @@ import * as React from 'react';
 import { mixColor, withTransition } from 'react-native-redash';
 import { TouchableWithoutFeedback } from 'react-native';
 import Animated, { call, useCode } from 'react-native-reanimated';
-import styles from 'styles';
+import style from 'styles';
 import { LabelContext } from './Labels';
+import styles from './styles';
 
 const { cond, eq } = Animated;
 
@@ -33,23 +34,33 @@ const Label: React.FC = () => {
   );
 
   const description = option[field];
-  const fontWeight = cond(isActive, 'bold', '400');
-  const opacity = cond(isActive, 0, 1);
-  const opacityDescription = cond(isActive, 1, 0.7);
+
   const color = mixColor(
     cond(isActive, 0, 1),
     optionsColor[0],
     optionsColor[1],
   );
   const cursor = size * i;
+  const inputRange = [cursor - (size - 5), cursor, cursor + (size + 5)];
+  const fontWeight = cond(isActive, 'bold', '400');
+  const opacityDescription = x.interpolate({
+    inputRange,
+    outputRange: [0.7, 1, 0.7],
+    extrapolate: Animated.Extrapolate.CLAMP,
+  });
+  const opacity = x.interpolate({
+    inputRange,
+    outputRange: [1, 0, 1],
+    extrapolate: Animated.Extrapolate.CLAMP,
+  });
   const translateY = x.interpolate({
-    inputRange: [cursor - (size - 5), cursor, cursor + (size + 5)],
-    outputRange: [0, align === 'top' ? -10 : 40, 0],
+    inputRange,
+    outputRange: [0, align === 'top' ? -24 : 40, 0],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
   const fontSize = x.interpolate({
-    inputRange: [cursor - (size - 5), cursor, cursor + (size + 5)],
-    outputRange: [12, align === 'top' ? 24 : 14, 12],
+    inputRange,
+    outputRange: [12, align === 'top' ? 30 : 14, 14],
     extrapolate: Animated.Extrapolate.CLAMP,
   });
 
@@ -59,28 +70,32 @@ const Label: React.FC = () => {
 
   return (
     <TouchableWithoutFeedback onPress={handleOnPress}>
-      <Animated.View style={styles.container}>
+      <Animated.View style={style.container}>
         <Animated.Text
-          style={{
-            color,
-            textAlign: 'center',
-            transform: [{ translateY }],
-            fontSize,
-            opacity: opacityDescription,
-            fontWeight,
-          }}
+          style={[
+            styles.text,
+            {
+              color,
+              transform: [{ translateY }],
+              fontSize,
+              opacity: opacityDescription,
+              fontWeight,
+            },
+          ]}
         >
           {description}
           {active && align === 'top' ? '%' : ''}
         </Animated.Text>
         {field === 'level' ? (
           <Animated.Text
-            style={{
-              color,
-              textAlign: 'center',
-              fontSize: 9,
-              opacity,
-            }}
+            style={[
+              styles.text,
+              {
+                color,
+                fontSize: 9,
+                opacity,
+              },
+            ]}
           >
             |
           </Animated.Text>

@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.PRIMARY_COLOR,
     flexDirection: 'row',
   },
+  text: {
+    textAlign: 'center',
+    fontFamily: 'Palanquin',
+  },
 });
 
 export default styles;
