@@ -9,6 +9,7 @@ export const WIDTH_CURSOR = fullWidth / COUNT_LABELS;
 export const HEIGHT_CURSOR = WIDTH_CURSOR;
 
 const styles = StyleSheet.create({
+  containerMain: { flex: 1, backgroundColor: 'white' },
   container: { flex: 1, backgroundColor: colors.PRIMARY_COLOR },
   labelTop: {
     width: fullWidth,

@@ -40,6 +40,7 @@ module.exports = {
       'error',
       {
         allowTypedFunctionExpressions: true,
+        allowExpressions: true,
       },
     ],
     'import/extensions': [
@@ -50,6 +51,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'jsx-a11y/accessible-emoji': 'off',
     'react/no-unescaped-entities': [
       'error',
       {

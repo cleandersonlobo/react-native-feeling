@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Text as TextDefault } from 'react-native';
 import colors from './colors';
 import dimensions from './dimensions';

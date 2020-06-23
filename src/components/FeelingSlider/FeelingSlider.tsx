@@ -41,41 +41,43 @@ const FeelingSlider: React.FC = () => {
   useCode(() => set(x, translateX), [x, translateX]);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.labelTop}>
-        <LabelsContext.Provider
-          value={{
-            x,
-            count: COUNT_LABELS,
-            size: HEIGHT_CURSOR,
-            options: LABELS_DATA,
-            optionsColor: [colors.PRIMARY_COLOR, 'gray'],
-            field: 'level',
-            align: 'top',
-          }}
-        >
-          <Labels />
-        </LabelsContext.Provider>
-      </View>
-      <View style={styles.contentCursor}>
-        <LabelsContext.Provider
-          value={{
-            x,
-            count: COUNT_LABELS,
-            size: HEIGHT_CURSOR,
-            options: LABELS_DATA,
-            optionsColor: ['white', '#eee'],
-            field: 'feeling',
-            align: 'bottom',
-          }}
-        >
-          <Labels />
-        </LabelsContext.Provider>
-        <Cursor
-          size={HEIGHT_CURSOR}
-          options={LABELS_DATA}
-          {...{ x, count: COUNT_LABELS, snapPoints, gestureHandler }}
-        />
+    <View style={styles.containerMain}>
+      <View style={styles.container}>
+        <View style={styles.labelTop}>
+          <LabelsContext.Provider
+            value={{
+              x,
+              count: COUNT_LABELS,
+              size: HEIGHT_CURSOR,
+              options: LABELS_DATA,
+              optionsColor: [colors.PRIMARY_COLOR, 'gray'],
+              field: 'level',
+              align: 'top',
+            }}
+          >
+            <Labels />
+          </LabelsContext.Provider>
+        </View>
+        <View style={styles.contentCursor}>
+          <LabelsContext.Provider
+            value={{
+              x,
+              count: COUNT_LABELS,
+              size: HEIGHT_CURSOR,
+              options: LABELS_DATA,
+              optionsColor: ['white', '#eee'],
+              field: 'feeling',
+              align: 'bottom',
+            }}
+          >
+            <Labels />
+          </LabelsContext.Provider>
+          <Cursor
+            size={HEIGHT_CURSOR}
+            options={LABELS_DATA}
+            {...{ x, count: COUNT_LABELS, snapPoints, gestureHandler }}
+          />
+        </View>
       </View>
     </View>
   );
