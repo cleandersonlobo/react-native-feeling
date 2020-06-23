@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native';
 import styled from 'styled-components';
 import { Text as TextDefault } from 'react-native';
 import colors from './colors';
-import base from './base';
+import dimensions from './dimensions';
 
-export { colors, base };
+export { colors, dimensions };
 
 export const Text = styled(TextDefault)`
   font-family: 'Palanquin';
