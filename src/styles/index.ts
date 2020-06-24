@@ -22,6 +22,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
+  headerStyles: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+  headerLeftContainerStyle: {
+    paddingLeft: 15,
+  },
 });
 
 export default styles;

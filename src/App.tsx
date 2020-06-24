@@ -1,14 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 import Routes from 'routes';
+import { colors } from 'styles';
 
 const App: React.FC = () => {
   return (
-    <NavigationContainer>
-      <StatusBar barStyle="light-content" />
-      <Routes />
-    </NavigationContainer>
+    <SafeAreaProvider style={{ backgroundColor: colors.PRIMARY_COLOR }}>
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 

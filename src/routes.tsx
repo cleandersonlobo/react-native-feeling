@@ -3,29 +3,24 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from 'screens/Home/Home';
 import Feelings from 'screens/Feelings/Feelings';
-import gloablStyle from 'styles';
+import gloablStyle, { colors } from 'styles';
+import { transitionSpec } from 'helpers/utils';
 
 const MainStack = createStackNavigator();
-const config = {
-  animation: 'spring',
-  config: {
-    stiffness: 2000,
-    damping: 500,
-    mass: 3,
-    overshootClamping: true,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01,
-  },
-};
 
 const RouteStack: React.FC = () => {
   return (
-    <MainStack.Navigator>
+    <MainStack.Navigator initialRouteName="Feelings">
       <MainStack.Screen
         name="Home"
         component={Home}
         options={{
-          headerShown: false,
+          headerTintColor: '#000000',
+          headerBackTitleVisible: false,
+          headerTitle: '',
+          headerStyle: gloablStyle.headerStyles,
+          headerLeftContainerStyle: gloablStyle.headerLeftContainerStyle,
+          transitionSpec,
         }}
       />
       <MainStack.Screen
@@ -34,18 +29,16 @@ const RouteStack: React.FC = () => {
         options={{
           headerTitle: 'How are your feeling?',
           headerTitleStyle: gloablStyle.headerTitleStyle,
-          headerTransparent: true,
+          headerTransparent: false,
           headerBackTitleVisible: false,
-          headerTintColor: '#fff',
-          headerLeftContainerStyle: {
-            paddingLeft: 15,
-            elevation: 0,
+          headerTintColor: '#ffffff',
+          headerStyle: {
+            backgroundColor: colors.PRIMARY_COLOR,
+            ...gloablStyle.headerStyles,
           },
+          headerLeftContainerStyle: gloablStyle.headerLeftContainerStyle,
           headerTitleAllowFontScaling: true,
-          transitionSpec: {
-            open: config,
-            close: config,
-          },
+          transitionSpec,
         }}
       />
     </MainStack.Navigator>
