@@ -10,6 +10,11 @@ export const Text = styled(TextDefault)`
   font-family: 'Palanquin';
 `;
 
+export const PlaceholderSlider = styled.View`
+  flex: 1;
+  background-color: ${colors.PRIMARY_COLOR};
+`;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

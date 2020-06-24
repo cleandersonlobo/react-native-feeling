@@ -1,18 +1,27 @@
 import React from 'react';
 import { View, SafeAreaView } from 'react-native';
 import { BallIndicator } from 'react-native-indicators';
-import gloablStyle from 'styles';
+import gloablStyle, { colors } from 'styles';
 
-const Loading: React.FC = () => {
+interface Props {
+  backgroundColor?: string;
+  color?: string;
+}
+
+const Loading: React.FC<Props> = ({
+  backgroundColor = colors.PRIMARY_COLOR,
+  color = '#ffffff',
+}) => {
   return (
     <SafeAreaView
       style={[
-        gloablStyle.safeArea,
+        gloablStyle.container,
         { justifyContent: 'center', alignItems: 'center' },
+        { backgroundColor },
       ]}
     >
       <View>
-        <BallIndicator size={50} color="#ffffff" />
+        <BallIndicator size={50} color={color} />
       </View>
     </SafeAreaView>
   );

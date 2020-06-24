@@ -1,8 +1,15 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
-import { FeelingSlider, FeelingStatus, Button } from 'components';
-import styles from 'styles';
+import { Button, FeelingStatusLoading } from 'components';
+import styles, { PlaceholderSlider } from 'styles';
 import { useNavigation, StackActions } from '@react-navigation/native';
+
+const FeelingStatus = React.lazy(() =>
+  import('components/FeelingStatus/FeelingStatus'),
+);
+const FeelingSlider = React.lazy(() =>
+  import('components/FeelingSlider/FeelingSlider'),
+);
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
@@ -19,9 +26,13 @@ const Home: React.FC = () => {
           contentInsetAdjustmentBehavior="automatic"
           contentContainerStyle={styles.container}
         >
-          <FeelingStatus />
-          <FeelingSlider />
-          <Button onPress={navigateTo} />
+          <React.Suspense fallback={<FeelingStatusLoading />}>
+            <FeelingStatus />
+          </React.Suspense>
+          <React.Suspense fallback={<PlaceholderSlider />}>
+            <FeelingSlider />
+            <Button onPress={navigateTo} />
+          </React.Suspense>
         </ScrollView>
       </SafeAreaView>
     </>
