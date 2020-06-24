@@ -1,16 +1,17 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { FeelingSlider, FeelingStatus, Button } from 'components';
 import styles from 'styles';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, StackActions } from '@react-navigation/native';
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
   function navigateTo(): void {
-    navigation.navigate('Feelings');
+    navigation.dispatch(StackActions.push('Feelings'));
   }
   return (
     <>
+      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.safeHeader} />
       <SafeAreaView style={styles.safeArea}>
         <ScrollView
