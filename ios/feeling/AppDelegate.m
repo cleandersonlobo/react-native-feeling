@@ -36,7 +36,7 @@ static void InitializeFlipper(UIApplication *application) {
                                                    moduleName:@"feeling"
                                             initialProperties:nil];
 
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+  rootView.backgroundColor = [UIColor colorWithRed: 0.46 green: 0.33 blue: 0.89 alpha: 1.00];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
