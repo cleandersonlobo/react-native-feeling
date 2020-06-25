@@ -4,7 +4,7 @@ const config: TransitionSpec = {
   animation: 'spring',
   config: {
     stiffness: 2000,
-    damping: 500,
+    damping: 300,
     mass: 3,
     overshootClamping: true,
     restDisplacementThreshold: 0.01,
