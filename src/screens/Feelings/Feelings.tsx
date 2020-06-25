@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import globalStyles from 'styles';
 import { Loading } from 'components';
+import FlashMessage from 'react-native-flash-message';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { EmotionTypes } from 'store/ducks/emotion';
 import { Circle, CIRCLE_WIDTH } from './styles';
@@ -53,6 +54,7 @@ const Feelings: React.FC = () => {
           )}
         />
       </React.Suspense>
+      <FlashMessage position="top" />
     </SafeAreaView>
   );
 };

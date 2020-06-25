@@ -26,7 +26,7 @@ export const request = (
 export const failure = (
   state: ImmutableState<EmotionAppState>,
 ): ImmutableState<EmotionAppState> =>
-  state.merge({ loading: true, error: false });
+  state.merge({ loading: false, error: false });
 
 export const select = (
   state: ImmutableState<EmotionAppState>,

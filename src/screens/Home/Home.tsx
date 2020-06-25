@@ -24,6 +24,7 @@ const Home: React.FC = () => {
   function navigateTo(): void {
     navigation.dispatch(StackActions.push('Feelings'));
   }
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
