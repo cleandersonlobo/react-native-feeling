@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "fake-api": "json-server --watch emojis.json  --port 3001"
+    "fake-api": "json-server --watch emojis.json  --port 3001",
+    "build:ios": "npx react-native bundle --entry-file index.tsx --platform ios --dev false --bundle-output ios/feeling/main.jsbundle --assets-dest ios"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
