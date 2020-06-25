@@ -6,7 +6,7 @@ module.exports = {
       {
         cwd: 'babelrc',
         root: ['./src'],
-        extensions: ['.js', '.ts', '.tsx'],
+        extensions: ['.js', '.ts', '.tsx', '.json'],
       },
     ],
   ],

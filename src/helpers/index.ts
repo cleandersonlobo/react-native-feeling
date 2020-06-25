@@ -1,7 +1,7 @@
 export const LABELS_DATA = [
-  { level: 0, feeling: 'Slightly' },
-  { level: 25, feeling: 'A little' },
-  { level: 50, feeling: 'Fairly' },
-  { level: 75, feeling: 'Very' },
-  { level: 100, feeling: 'Extremly' },
+  { id: 0, level: 0, description: 'Slightly' },
+  { id: 1, level: 25, description: 'A little' },
+  { id: 2, level: 50, description: 'Fairly' },
+  { id: 3, level: 75, description: 'Very' },
+  { id: 4, level: 100, description: 'Extremly' },
 ];
