@@ -6,8 +6,9 @@ interface TextStatusProps {
 }
 export const TextStatus = styled(Text)`
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 45px;
+  text-align: center;
   color: ${(props: TextStatusProps) => props.color || '#000000'};
 `;
 
