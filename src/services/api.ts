@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+const baseURL = __DEV__
+  ? 'http://localhost:3001/'
+  : 'https://my-json-server.typicode.com/cleandersonlobo/react-native-feeling/';
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001/',
+  baseURL,
 });
 
 export const ENDPOINTS = {
