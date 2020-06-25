@@ -26,7 +26,7 @@ interface CursorProps {
   runAnimation: Animated.Value<number>;
   size: number;
   count: number;
-  options: LabelOptions[];
+  options: FeelingProps[];
   snapPoints: number[];
   gestureHandler: any;
 }
@@ -118,4 +118,4 @@ const Cursor: React.FC<CursorProps> = ({
   );
 };
 
-export default Cursor;
+export default React.memo(Cursor);

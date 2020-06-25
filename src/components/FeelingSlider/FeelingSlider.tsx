@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { LABELS_DATA } from 'helpers';
@@ -16,17 +17,25 @@ import Labels from './Labels';
 import styles, { COUNT_LABELS, HEIGHT_CURSOR } from './styles';
 
 const { Value, cond, eq, set, useCode, add } = Animated;
+interface Props {
+  value: FeelingProps;
+}
 
-const FeelingSlider: React.FC = () => {
-  const runAnimation = new Value(0);
-  const snapPoints = LABELS_DATA.map((e, i) => i * HEIGHT_CURSOR);
+const FeelingSlider: React.FC<Props> = ({ value: feeling }) => {
+  const cursor = useMemo(() => feeling.id * HEIGHT_CURSOR, []);
+  const runAnimation = new Value(cursor);
+  const snapPoints = useMemo(
+    () => LABELS_DATA.map((e, i) => i * HEIGHT_CURSOR),
+    [],
+  );
   const {
     gestureHandler,
     velocity,
     state,
     translation,
   } = usePanGestureHandler();
-  const offset = new Value(State.UNDETERMINED);
+  const offset = new Value(cursor);
+
   const value = add(offset, translation.x);
 
   const translateX = clamp(
@@ -48,22 +57,15 @@ const FeelingSlider: React.FC = () => {
     (COUNT_LABELS - 1) * HEIGHT_CURSOR,
   );
 
-  const handleChange = (cursor: Animated.Adaptable<0>): void => {
-    runAnimation.setValue(cursor);
-  };
   useCode(() => set(runAnimation, translateX), [runAnimation, translateX]);
-
+  const contextValues = { runAnimation, size: HEIGHT_CURSOR, state, offset };
   return (
     <View style={styles.containerMain}>
       <View style={styles.container}>
         <View style={styles.labelTop}>
           <LabelsContext.Provider
             value={{
-              runAnimation,
-              handleChange,
-              count: COUNT_LABELS,
-              size: HEIGHT_CURSOR,
-              options: LABELS_DATA,
+              ...contextValues,
               optionsColor: [colors.PRIMARY_COLOR, 'gray'],
               field: 'level',
               align: 'top',
@@ -75,13 +77,9 @@ const FeelingSlider: React.FC = () => {
         <View style={styles.contentCursor}>
           <LabelsContext.Provider
             value={{
-              runAnimation,
-              handleChange,
-              count: COUNT_LABELS,
-              size: HEIGHT_CURSOR,
-              options: LABELS_DATA,
+              ...contextValues,
               optionsColor: ['white', '#eee'],
-              field: 'feeling',
+              field: 'description',
               align: 'bottom',
             }}
           >
@@ -103,4 +101,4 @@ const FeelingSlider: React.FC = () => {
   );
 };
 
-export default FeelingSlider;
+export default React.memo(FeelingSlider);

@@ -1,37 +1,65 @@
 import * as React from 'react';
 import { mixColor } from 'react-native-redash';
-import { TouchableWithoutFeedback } from 'react-native';
 import Animated from 'react-native-reanimated';
 import style from 'styles';
-import { LabelContext, LabelsContext } from 'contexts';
+import { LabelsContext } from 'contexts';
+import { useDispatch } from 'react-redux';
+import { FeelingActions } from 'store/ducks/feeling';
+import { State } from 'react-native-gesture-handler';
 import styles from './styles';
 
 const { cond, eq, call, useCode, round, divide } = Animated;
 
-const Label: React.FC = () => {
-  const [active, setActive] = React.useState(false);
+interface Props {
+  i: number;
+  option: FeelingProps;
+}
+
+const Label: React.FC<Props> = ({ option, i }) => {
   const {
     field,
-    i,
     align,
     optionsColor,
-    option,
     runAnimation,
     size,
-  } = React.useContext(LabelContext);
+    state: stateGesture,
+  } = React.useContext(LabelsContext);
+  const [percentText, setActive] = React.useState('');
+  const dispatch = useDispatch();
   const index = round(divide(runAnimation, size));
-  const { handleChange } = React.useContext(LabelsContext);
+  const handleChange = React.useCallback(() => {
+    dispatch(FeelingActions.changeFeeling(option));
+  }, [dispatch, option]);
 
   const isActive = eq(index, i);
+  const onGesture = eq(stateGesture, State.END);
 
   useCode(
     () =>
       cond(
         isActive,
-        call([], () => setActive(true)),
-        call([], () => setActive(false)),
+        call([], () => {
+          if (align === 'top') setActive('%');
+        }),
+        call([], () => {
+          if (align === 'top') setActive('');
+        }),
       ),
-    [index],
+    [onGesture],
+  );
+
+  useCode(
+    () =>
+      cond(
+        onGesture,
+        cond(
+          isActive,
+          call([], () => {
+            if (align === 'top') handleChange();
+          }),
+        ),
+      ),
+    [onGesture, isActive],
   );
 
   const description = option[field];
@@ -65,45 +93,39 @@ const Label: React.FC = () => {
     extrapolate: Animated.Extrapolate.CLAMP,
   });
 
-  const handleOnPress = React.useCallback(() => {
-    handleChange(cursor, option);
-  }, [cursor, option, handleChange]);
-
   return (
-    <TouchableWithoutFeedback onPress={handleOnPress}>
-      <Animated.View style={style.container}>
+    <Animated.View style={style.container}>
+      <Animated.Text
+        style={[
+          styles.text,
+          {
+            color,
+            transform: [{ translateY }],
+            fontSize,
+            opacity: opacityDescription,
+            fontWeight,
+          },
+        ]}
+      >
+        {description}
+        {align === 'top' && percentText}
+      </Animated.Text>
+      {field === 'level' ? (
         <Animated.Text
           style={[
             styles.text,
             {
               color,
-              transform: [{ translateY }],
-              fontSize,
-              opacity: opacityDescription,
-              fontWeight,
+              fontSize: 9,
+              opacity,
             },
           ]}
         >
-          {description}
-          {active && align === 'top' ? '%' : ''}
+          |
         </Animated.Text>
-        {field === 'level' ? (
-          <Animated.Text
-            style={[
-              styles.text,
-              {
-                color,
-                fontSize: 9,
-                opacity,
-              },
-            ]}
-          >
-            |
-          </Animated.Text>
-        ) : null}
-      </Animated.View>
-    </TouchableWithoutFeedback>
+      ) : null}
+    </Animated.View>
   );
 };
 
-export default Label;
+export default React.memo(Label);
