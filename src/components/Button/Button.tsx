@@ -3,11 +3,12 @@ import { Touchable, TouchableText } from './styles';
 
 export interface Props {
   onPress(): void;
+  text?: string;
 }
-const Button: React.FC<Props> = props => {
+const Button: React.FC<Props> = ({ text = 'NEXT', ...props }) => {
   return (
     <Touchable {...props}>
-      <TouchableText>NEXT</TouchableText>
+      <TouchableText>{text}</TouchableText>
     </Touchable>
   );
 };

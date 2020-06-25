@@ -12,6 +12,7 @@ import FlashMessage from 'react-native-flash-message';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { EmotionTypes } from 'store/ducks/emotion';
 import { Circle, CIRCLE_WIDTH } from './styles';
+import EmptyList from './EmptyList';
 
 const Item = React.lazy(() => import('./Item'));
 const Feelings: React.FC = () => {
@@ -38,6 +39,7 @@ const Feelings: React.FC = () => {
               onRefresh={handleOnRefresh}
             />
           }
+          ListEmptyComponent={<EmptyList onPress={handleOnRefresh} />}
           keyExtractor={(item: EmotionProps) => item.name}
           contentContainerStyle={{
             justifyContent: 'center',

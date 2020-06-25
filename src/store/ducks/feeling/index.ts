@@ -9,7 +9,7 @@ export const { Types: FeelingTypes, Creators: FeelingActions } = createActions({
 // Reducer
 
 const INITIAL_STATE = Immutable<FeelingAppState>({
-  feeling: LABELS_DATA[1],
+  feeling: LABELS_DATA[0],
 });
 type ImmutableState<T> = ImmutableObject<T> & T;
 

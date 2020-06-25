@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
   headerLeftContainerStyle: {
     paddingLeft: 15,
   },
+  alignCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
