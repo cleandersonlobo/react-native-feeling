@@ -1,7 +1,19 @@
 {
   "name": "react-native-feeling",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
+  "author": "Cleanderson Lobo",
+  "repository": "https://github.com/cleandersonlobo/react-native-feeling",
+  "keywords": [
+    "react",
+    "react native",
+    "feeling",
+    "typescript",
+    "animated",
+    "challenge",
+    "ios",
+    "android"
+  ],
   "scripts": {
     "android": "npx react-native run-android",
     "ios": "npx react-native run-ios",
@@ -31,7 +43,6 @@
     "react-native-vector-icons": "^6.6.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "redux-persist": "^6.0.0",
     "redux-saga": "^1.1.3",
     "reduxsauce": "^1.1.3",
     "rn-placeholder": "^3.0.1",
