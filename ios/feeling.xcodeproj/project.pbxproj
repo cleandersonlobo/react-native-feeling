@@ -11,7 +11,8 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2F8C7E5B24A3F8020012C4EE /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C7E5A24A3F8020012C4EE /* main.jsbundle */; };
+		2F8C7E5E24A4927B0012C4EE /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C7E5D24A4927B0012C4EE /* assets */; };
+		2F8C7E5F24A492900012C4EE /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 2F8C7E5A24A3F8020012C4EE /* main.jsbundle */; };
 		7460E712875C4757A0AA277C /* Palanquin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C62C2DC9866407EBAC957B6 /* Palanquin-Bold.ttf */; };
 		7C588C12B9054329A842ECDB /* Palanquin-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8267381DA2F7448F92E889BA /* Palanquin-Light.ttf */; };
 		994F6BFBB0D14874A6FB4162 /* Palanquin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6FCE6E340714BF0915A3ED0 /* Palanquin-Medium.ttf */; };
@@ -33,6 +34,7 @@
 		1ACCFF9C30F4886B2F622929 /* libPods-feeling-feelingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-feeling-feelingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2FB7D9C5B572D4EF19657C /* Pods-feeling-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-tvOS.release.xcconfig"; path = "Target Support Files/Pods-feeling-tvOS/Pods-feeling-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2F8C7E5A24A3F8020012C4EE /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		2F8C7E5D24A4927B0012C4EE /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		40D49CEB219E44E76A7BFE21 /* Pods-feeling-feelingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-feeling-feelingTests.debug.xcconfig"; path = "Target Support Files/Pods-feeling-feelingTests/Pods-feeling-feelingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		506949C8EC0A4C499FBCC54B /* PalanquinDark-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PalanquinDark-Medium.ttf"; path = "../assets/fonts/PalanquinDark-Medium.ttf"; sourceTree = "<group>"; };
 		58692E1197304C92921A8D71 /* PalanquinDark-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PalanquinDark-Bold.ttf"; path = "../assets/fonts/PalanquinDark-Bold.ttf"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2F8C7E5D24A4927B0012C4EE /* assets */,
 				13B07FAE1A68108700A75B9A /* feeling */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* feelingTests */,
@@ -233,11 +236,12 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				2F8C7E5E24A4927B0012C4EE /* assets in Resources */,
 				7460E712875C4757A0AA277C /* Palanquin-Bold.ttf in Resources */,
 				7C588C12B9054329A842ECDB /* Palanquin-Light.ttf in Resources */,
 				994F6BFBB0D14874A6FB4162 /* Palanquin-Medium.ttf in Resources */,
-				2F8C7E5B24A3F8020012C4EE /* main.jsbundle in Resources */,
 				F03AB70A3B2746E38BDF6965 /* Palanquin-Regular.ttf in Resources */,
+				2F8C7E5F24A492900012C4EE /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

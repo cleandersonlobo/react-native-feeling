@@ -77,10 +77,7 @@ target 'feeling' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'feelingTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+
 
   use_native_modules!
 
@@ -91,14 +88,5 @@ target 'feeling' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
-
-target 'feeling-tvOS' do
-  # Pods for feeling-tvOS
-
-  target 'feeling-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 end
